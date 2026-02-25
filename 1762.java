@@ -15,6 +15,5 @@ class Solution {
             count++;
         }
         return count<=1;
-        
     }
 }
