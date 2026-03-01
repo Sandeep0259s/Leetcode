@@ -4,11 +4,19 @@ class Solution {
         {
             return false;
         }
-        char[] c1=s.toCharArray();
-        char[] c2=t.toCharArray();
-        Arrays.sort(c1);
-        Arrays.sort(c2);
-        return Arrays.equals(c1,c2);
-        
+        int freq[]=new int[26];
+        for(int i=0;i<s.length();i++)
+        {
+            freq[s.charAt(i)-'a']++;
+            freq[t.charAt(i)-'a']--;
+        }
+        for(int i=0;i<26;i++)
+        {
+            if(freq[i]!=0)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
